@@ -1,0 +1,4 @@
+prefix: "&7[&bIndustry&7] "
+reload: "&a配置已重載。"
+usage: "&e用法: /industry give <ID> [tier]"
+given: "&a已給予機器: &f%id% &7(等級 %tier%)"

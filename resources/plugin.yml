@@ -1,0 +1,13 @@
+name: IndustryPlugin
+main: com.create.industry.IndustryPlugin
+version: 0.4.0
+api-version: '1.21'
+author: create
+commands:
+  industry:
+    description: Industry admin
+    usage: /industry <give|reload>
+    permission: industry.admin
+permissions:
+  industry.admin:
+    default: op

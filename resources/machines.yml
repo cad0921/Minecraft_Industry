@@ -1,0 +1,104 @@
+energy:
+  unit: FE
+  tick:
+    power_interval: 10
+    transport_interval: 5
+    machine_batch_size: 128
+
+persist:
+  save_interval_sec: 5
+  per_chunk_file: true
+
+protection:
+  respect_worldguard: true
+  break_whitelist:
+    - STONE
+    - DEEPSLATE
+    - COBBLESTONE
+    - ANDESITE
+    - DIORITE
+    - GRANITE
+    - COPPER_ORE
+    - IRON_ORE
+    - GOLD_ORE
+    - REDSTONE_ORE
+    - DIAMOND_ORE
+  blacklist_dimensions: []
+
+generators:
+  fuel:
+    id: FUEL_GEN
+    capacity: 20000
+    output_per_tick: 120
+    fuels:
+      COAL:      { fe: 16000 }
+      CHARCOAL:  { fe: 16000 }
+      OAK_LOG:   { fe: 2400 }
+      BLAZE_ROD: { fe: 32000 }
+  solar:
+    id: SOLAR_GEN
+    base_output: 40
+    night_multiplier: 0.0
+    rain_multiplier: 0.5
+  wind:
+    id: WIND_GEN
+    base_output: 20
+    per_height: 0.5
+    min_y: 64
+    max_output: 120
+    storm_bonus: 1.2
+  hydro:
+    id: HYDRO_GEN
+    base_output: 30
+    max_output: 180
+    sample_faces: 6
+
+miner:
+  id: AUTO_MINER
+  mode: forward
+  work_per_tick: 1
+  base_cost_per_block: 80
+
+matter_converter:
+  id: MAT_CONVERTER
+  level_speed_bonus:
+    2: 0.80
+    3: 0.60
+    4: 0.50
+  stages:
+    stage1:
+      from: COBBLESTONE
+      to:   STONE
+      time: 30s
+      cost: 100
+      level: 1
+    stage2:
+      from: STONE
+      to:   COPPER_ORE
+      time: 60s
+      cost: 200
+      level: 1
+    stage3:
+      from: COPPER_ORE
+      to:   IRON_ORE
+      time: 90s
+      cost: 300
+      level: 2
+    stage4:
+      from: IRON_ORE
+      to:   GOLD_ORE
+      time: 120s
+      cost: 400
+      level: 2
+    stage5:
+      from: GOLD_ORE
+      to:   REDSTONE_ORE
+      time: 150s
+      cost: 600
+      level: 3
+    stage6:
+      from: REDSTONE_ORE
+      to:   DIAMOND_ORE
+      time: 180s
+      cost: 1000
+      level: 3

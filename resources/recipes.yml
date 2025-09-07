@@ -1,0 +1,61 @@
+machines:
+  fuel_generator:
+    shape:
+      - "IFI"
+      - "CMC"
+      - "IRI"
+    keys:
+      I: IRON_INGOT
+      F: FURNACE
+      C: COAL_BLOCK
+    result: FUEL_GEN
+
+  auto_miner:
+    shape:
+      - "IPI"
+      - "RPR"
+      - "IPI"
+    keys:
+      I: IRON_INGOT
+      R: REDSTONE
+      P: PISTON
+    result: AUTO_MINER
+
+  matter_converter:
+    shape:
+      - "OCO"
+      - "RBR"
+      - "OCO"
+    keys:
+      O: OBSIDIAN
+      C: COBBLESTONE
+      R: REDSTONE
+      B: DIAMOND
+    result: MAT_CONVERTER
+
+processing:
+  macerator:
+    - in: IRON_ORE
+      out: IRON_INGOT x2
+      fe: 160
+      time: 80
+    - in: COPPER_ORE
+      out: COPPER_INGOT x2
+      fe: 160
+      time: 80
+
+  compressor:
+    - in: IRON_NUGGET x9
+      out: IRON_INGOT x1
+      fe: 120
+      time: 60
+    - in: COAL x9
+      out: COAL_BLOCK x1
+      fe: 80
+      time: 60
+
+  assembler:
+    - in: REDSTONE
+      out: REDSTONE_TORCH
+      fe: 50
+      time: 40
